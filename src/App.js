@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import * as firebase from 'firebase/app'
-import Link from './Link'
+// import * as firebase from 'firebase/app'
 
 class App extends Component {
   constructor(props) {
@@ -37,11 +36,16 @@ class App extends Component {
     let linksShow = null
     if (this.state.isFetching === false) {
       linksShow = this.state.links.map((link) => {
-        return {link}
+        return (
+        <div className='link' key={link.id}>
+          <h2>{link.title}</h2>
+          <h4><a href={link.url}>{link.url}</a></h4>
+        </div> 
+        )
       })
         
     } else {
-      linksShow = <div> Loading... </div>
+      linksShow = <h1> Loading... </h1>
     }
     return (
       <div className="links-main">
@@ -51,7 +55,7 @@ class App extends Component {
           </div>
         </div>
         <div className='container'>
-          <div className='links-list'> 
+          <div className='links-list col'>
             { linksShow }
           </div>
         </div>
