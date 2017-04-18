@@ -35,9 +35,9 @@ class App extends Component {
   render() {
     let linksShow = null
     if (this.state.isFetching === false) {
-      linksShow = this.state.links.map((link) => {
+      linksShow = this.state.links.map((link, i) => {
         return (
-        <div className='link' key={link.id}>
+        <div className='link' key={link.id} id={`id${i}`}>
           <h2>{link.title}</h2>
           <h4><a href={link.url}>{link.url}</a></h4>
         </div> 
