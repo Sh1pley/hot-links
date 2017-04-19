@@ -45,7 +45,7 @@ class App extends Component {
       })
         
     } else {
-      linksShow = <h1> Loading... </h1>
+      linksShow = <h1 className="loading"> Loading... </h1>
     }
     return (
       <div className="links-main">
